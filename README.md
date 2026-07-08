@@ -3,7 +3,7 @@
 ## 📄 Portada
 
 **Institución:** Instituto Tecnológico de Oaxaca (ITO)  
-**Proyecto:**  Proyecto Login 
+**Proyecto:**  Proyecto Login  
 **Materia/Módulo:**  
 **Programación Web**  
 **Integrantes del Equipo:**
