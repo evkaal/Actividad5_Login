@@ -3,10 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Sistema de Administración</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link Styles="stylesheets" herf= "css/index.css">
     
+    <style>
+        /* 1. Estructura base */
+        body { 
+            background-color: #f4f6f9; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        #wrapper { 
+            display: flex; 
+            width: 100%; 
+            align-items: stretch; 
+        }
+
+        /* 2. Sidebar Clásico (Azul corporativo) */
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            background-color: #343a40; /* Gris muy oscuro/Azul */
+            color: #fff;
+            transition: all 0.3s;
+            min-height: 100vh;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        #sidebar.active { margin-left: -250px; }
+        
+        .sidebar-header {
+            padding: 20px;
+            background: #212529;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #4b545c;
+        }
+
+        #sidebar .nav-link {
+            color: #c2c7d0;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        #sidebar .nav-link:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid #007bff;
+        }
+
+        #submenu { background: #2c3136; }
+        #submenu .nav-link { padding-left: 40px; font-size: 0.95rem; border-left: none; }
+        #submenu .nav-link:hover { color: #007bff; }
+
+        /* 3. Área de contenido y Navbar */
+        #content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+        }
+        .navbar {
+            padding: 15px 20px;
+            background: #fff;
+            border-bottom: 1px solid #dee2e6;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        /* 4. Tarjeta del Formulario */
+        .card {
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+            border-top: 3px solid #007bff; /* Detalle superior azul */
+        }
+        .card-header {
+            background-color: transparent;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            padding: 15px 20px;
+        }
+        .form-label { font-weight: 600; color: #495057; font-size: 0.9rem; }
+        
+        /* 5. Modal */
+        #modal {
+            display: none; 
+            position: fixed; z-index: 1050; left: 0; top: 0; width: 100%; height: 100%; 
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-box {
+            background: #fff; 
+            margin: 10% auto; 
+            padding: 30px; 
+            width: 90%; 
+            max-width: 400px; 
+            border-radius: 4px; 
+            text-align: center;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
 <body>
 
