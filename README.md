@@ -15,7 +15,7 @@ Este proyecto es una aplicación web de dos pantallas (`login.html` e `index.htm
 
 ---
 
-## 🛠️ Explicación y Documentación Técnica
+## 🛠️ Explicación 
 
 ### Framework CSS Utilizado
 Para el diseño de la interfaz y la responsividad se utilizó **Bootstrap 5.3.2** importado vía CDN. Se eligió este framework por su robusto sistema de cuadrículas (Grid System), utilidades de espaciado y componentes preconstruidos (Tarjetas, Modales, Menús desplegables), los cuales agilizaron el desarrollo de una interfaz limpia y corporativa sin mezclar otros frameworks incompatibles.
@@ -46,17 +46,17 @@ Dado que el proyecto no cuenta con un backend (base de datos real), la persisten
 
 ---
 
-## ⚙️ Proceso de Creación (Paso a Paso)
+## ⚙️ Proceso de Creación 
 
 ### 1. Construcción del Login (`login.html`)
 Se estructuró un contenedor centrado con Flexbox (`min-height: 100vh; align-items: center`). Se integró un formulario con campos de tipo `email` y `password`. Se vinculó un script local que detiene el comportamiento por defecto del formulario para realizar la validación mediante `utileria.js` antes de escribir en el `localStorage`.
-*(Ver Captura 1 en la sección de Flujo Completo)*
+/
 
 ### 2. Estructuración del Layout (`index.html`)
 Se diseñó un layout compuesto por un contenedor `#wrapper` manejado con Flexbox. 
 * **Sidebar:** Se configuró con un ancho fijo y una transición de margen izquierdo. El botón hamburguesa dispara la función `toggleSidebar()` que oculta este contenedor con un margen negativo.
 * **Navbar:** Se colocó en la parte superior del contenido dinámico y se alineó a la derecha el botón de sesión del usuario.
-*(Ver Captura 2 en la sección de Flujo Completo)*
+img/
 
 ### 3. Integración de la Sesión en el Navbar
 Se programó un bloque `<script>` al final de `index.html` que actúa como puente. Se asignó una función anónima que se dispara al cargar la página para extraer el correo del `localStorage` y sustituir el texto del botón del usuario en el Navbar.
@@ -75,7 +75,7 @@ Se implementó la estructura de un Modal fijo en la pantalla (`position: fixed`,
 
 **1. Pantalla de Acceso (Login)**
 img/
-*(Descripción: Validación de acceso)*
+
 
 **2. Panel de Control (Dashboard Vacío y Menú Lateral)**
 img/
