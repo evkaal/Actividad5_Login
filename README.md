@@ -4,11 +4,12 @@
 
 **Institución:** Instituto Tecnológico de Oaxaca (ITO)  
 **Proyecto:**  Proyecto Login 
-**Materia/Módulo:** Programación Web  
-
+**Materia/Módulo:**  
+**Programación Web**
 **Integrantes del Equipo:**
 *   Jimenez Mendoza Eduardo
 *   Hernández Uvera Azael
+
 
 **Descripción del Proyecto:**
 Este proyecto es una aplicación web de dos pantallas (`login.html` e `index.html`) que simula un entorno de administración. Permite iniciar sesión mediante credenciales validada realizar la captura y validación de datos de alumnos (incluyendo un número de control de 6 dígitos y evaluación de mayoría de edad).
