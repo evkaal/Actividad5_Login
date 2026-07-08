@@ -36,3 +36,13 @@ function validarFormulario() {
     }
     mostrarModal(edad);
 }
+
+function mostrarModal(edad) {
+    let texto = edad >= 18 ? "Es mayor de edad" : "Es menor de edad";
+    document.getElementById("resultadoEdad").innerText = texto;
+    document.getElementById("modal").style.display = "block";
+}
+
+function cerrarModal() {
+    document.getElementById("modal").style.display = "none";
+}
