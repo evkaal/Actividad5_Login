@@ -17,24 +17,41 @@ function validarFormulario() {
     let password = document.getElementById("password").value;
     let control = document.getElementById("control").value;
     let edad = document.getElementById("edad").value;
+    
+    // Contenedor de la alerta de Bootstrap
+    let alertContainer = document.getElementById("loginError");
+
+    // Se limpia y se oculta la alerta antes de validar de nuevo
+    alertContainer.classList.add("d-none");
+    alertContainer.innerText = "";
 
     if (nombre === "") {
-        alert("Nombre requerido");
+        mostrarAlerta("Nombre requerido");
         return;
     }
     if (!validarCorreo(correo)) {
-        alert("Correo inválido");
+        mostrarAlerta("Correo inválido");
         return;
     }
     if (!validarPassword(password)) {
-        alert("Password inválido");
+        mostrarAlerta("Password inválido");
         return;
     }
-    if (!/^\d{6}$/.test(control)) {
-        alert("Número de control debe tener 8 dígitos");
+    if (!/^\d{9}$/.test(control)) {
+        mostrarAlerta("Número de control debe tener 9 dígitos");
         return;
     }
+
+    
+    localStorage.setItem('sesionIniciada', 'true');
     mostrarModal(edad);
+}
+
+//  inyectar el texto y mostrar el recuadro de Bootstrap
+function mostrarAlerta(mensaje) {
+    let alertContainer = document.getElementById("loginError");
+    alertContainer.innerText = mensaje;
+    alertContainer.classList.remove("d-none"); // Quita la clase que lo oculta
 }
 
 function mostrarModal(edad) {
